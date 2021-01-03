@@ -2,7 +2,7 @@
 
 **Shell script for removing the orange mask on color negatives and inverting them to positive**
 
-This is Antti Penttala's script, as originally pusblished with his article [The Fastest And Easiest Method For Removing The Orange Mask In Photoshop](http://www.penttala.fi/blog/the-fastest-and-easiest-method-for-removing-the-orange-mask-in-photoshop/) on July 31, 2015.
+This is Antti Penttala's script, as originally pusblished with his article **“The Fastest And Easiest Method For Removing The Orange Mask In Photoshop”** on July 31, 2015. It seems howewer, that the [original article](http://www.penttala.fi/blog/the-fastest-and-easiest-method-for-removing-the-orange-mask-in-photoshop/) is not available any longer; One may try a [snapshot](https://web.archive.org/web/20190101000000*/http://www.penttala.fi/blog/the-fastest-and-easiest-method-for-removing-the-orange-mask-in-photoshop/) over on [archive.org.](https://web.archive.org/web/20190101000000*/http://www.penttala.fi/blog/the-fastest-and-easiest-method-for-removing-the-orange-mask-in-photoshop/)
 
 This repo intends to make this script available via [homebrew](https://brew.sh/), the missing package manager for macOS.
 
@@ -10,13 +10,13 @@ This repo intends to make this script available via [homebrew](https://brew.sh/)
 
 ## Approaching the orange mask
 
-**The idea of this script is to “subtract” the orange color from the typically orange-tinted color negative image.** The script first internally resizes a mask image (blank piece of film) to 1×1 pixels, resulting in an “average orange”. It then *divides* the negative image in question by this average orange. After that, the image will be inverted (negated). The resulting positive image is stored with the same filename, but prefixed with **pos_** .
+**The idea of Antti Penttala's script is to “subtract” the orange color from the typically orange-tinted color negative image.** The script first internally resizes a **mask image** (blank piece of film) to 1×1 pixels, resulting in an “average orange”. It then *divides* the color values in the **frame image** by this average orange. After that, the image will be inverted (negated). The resulting positive image is stored with the same filename, but prefixed with **pos_** .
 
   
- 
+
 ## Example
 
-This removes the “orange” found in **mask.tiff** from **myphoto.tiff** and inverts the image to positive. The result image can be found under **pos_myphoto.tiff**
+This removes the *orange* found in **mask.tiff** from **myphoto.tiff** and inverts the image to positive. The result image can be found under **pos_myphoto.tiff**
 
 ```bash
 $ negdiv mask.tiff myphoto.tiff
@@ -24,7 +24,7 @@ $ ls
 
 myphoto.tiff
 pos_myphoto.tiff
-``` 
+```
 
 
 
@@ -52,7 +52,7 @@ Option    | Description
   -p path | Output to path instead of current directory
   -q      | Keep quiet
 
-  
+
 ### Autotone options
 
 
