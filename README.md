@@ -8,6 +8,33 @@ This repo intends to make this script available via [homebrew](https://brew.sh/)
 
 
 
+
+
+## Installation
+
+### Manual Installation
+
+**Linux** and **macOS** users store the script somewhere and make it executable: `chmod +x negdiv.sh`
+If the script is not stored inside `~/bin`, add the directory location to your `$PATH` variable.
+
+**Required:** Make sure [ImageMagick](http://www.imagemagick.org) is installed.
+**Recommended:** Fred Weinhaus's [autotone](http://www.fmwconcepts.com/imagemagick/autotone/index.php) script for post-processing.
+
+
+
+### Homebrew installation
+
+Install the *filmtools* tap and the *negdiv.sh* formula. — While [ImageMagick](http://www.imagemagick.org) will be installed automatically, Fred Weinhaus's [autotone](http://www.fmwconcepts.com/imagemagick/autotone/index.php) script still needs manual installation.
+
+```bash
+$ brew tap filmtools/filmtools
+$ brew install negdiv.sh
+```
+
+
+
+
+
 ## Approaching the orange mask
 
 **The idea of Antti Penttala's script is to “subtract” the orange color from the typically orange-tinted color negative image.** The script first internally resizes a **mask image** (blank piece of film) to 1×1 pixels, resulting in an “average orange”. It then *divides* the color values in the **frame image** by this average orange. After that, the image will be inverted (negated). The resulting positive image is stored with the same filename, but prefixed with **pos_** .
@@ -25,14 +52,6 @@ $ ls
 myphoto.tiff
 pos_myphoto.tiff
 ```
-
-
-
-## Installation
-
-- **Linux** and **macOS** users store the script somewhere and make it executable: `chmod +x negdiv.sh`
-- If not stored inside `~/bin`, add the directory location to your `$PATH` variable.
-- Make sure [ImageMagick.](http://www.imagemagick.org) is installed. 
 
 
 
@@ -68,6 +87,7 @@ Option    | Description
   -s none |  Do not sharpen
   -s auto |  Use *autotone* defaults for sharpening instead of *negdiv* defaults
   -s 3.0  |  Pass the float value to *autotone* for sharpening parameter  
+
 
 
 ## Legal notes
